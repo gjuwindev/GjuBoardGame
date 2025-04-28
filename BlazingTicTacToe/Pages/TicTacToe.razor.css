@@ -27,17 +27,17 @@ p {
 .square {
     width: 7rem;
     height: 7rem;
-    border: 1px solid white;
+    border: 2px solid black;
     margin-right: 4px;
-    border-radius: 30px;
+    border-radius: 0px;
     background: #78bec5;
     opacity: 80;
 }
 
-    .square:hover {
-        background: #ecaf4f;
-        cursor: pointer;
-    }
+.square:hover {
+    background: #ecaf4f;
+    cursor: pointer;
+}
 
 .char {
     font-size: 3.5rem;
