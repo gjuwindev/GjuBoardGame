@@ -25,9 +25,9 @@ p {
 }
 
 .square {
-    width: 7rem;
+/*    width: 7rem;
     height: 7rem;
-    border: 2px solid black;
+*/    border: 2px solid black;
     margin-right: 4px;
     border-radius: 0px;
     background: #78bec5;

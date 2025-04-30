@@ -1,22 +1,40 @@
 ﻿@page "/"
 @inject IJSRuntime JS
 
-<div>
-    <div class="board">
-        @for (int i = 0; i < 3; i++)
-        {
-            int row = i;
-            for (int j = 0; j < 3; j++)
+<button @onclick="() => dimension--">table--</button>
+<button @onclick="() => dimension++">table++</button>
+<button @onclick="() => squareSize--">cell--</button>
+<button @onclick="() => squareSize++">cell++</button>
+(@(rowClicked + 1), @(columnClicked + 1))
+
+<style>
+    td {
+        background-color: #f0f0f0;
+        text-align: center;
+        border: 1px black solid;
+        border-collapse: collapse;
+    }
+</style>
+
+<table>
+    @for (int n = 0; n < dimension; n++)
+    {
+        int row = n;
+        <tr>
+            @for (int m = 0; m < dimension; m++)
             {
-                int col = j;
-                <div class="square" @onclick="()=> SquareCliked(row, col)">
-                    <h5 class="char">@* @Board[row, col] *@  </h5>
-                </div>
+                int col = m;
+                <td class="square" style="width: @(squareSize)px; height: @(squareSize)px" @onclick="()=> SquareCliked(row, col)">
+                    @((n + 1) * (m + 1))
+                </td>
             }
-        }
-    </div>
+        </tr>
+    }
+</table>
 
-    <p style="width:100%; align-content: center">(@(rowClicked+1), @(columnClicked+1))</p>
-</div>
-
+@code
+{
+    int dimension = 10;
+    int squareSize = 50;
+}
 
