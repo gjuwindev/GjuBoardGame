@@ -1,4 +1,4 @@
-namespace BlazingTicTacToe.Pages
+namespace GjuBoardGame.Pages
 {
     public partial class BoardGame
     {
